@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, Crown, Scissors, Palette, Users, Star } from "lucide-react";
+import { Sparkles, Crown, Scissors, Palette, Users, Star, Zap } from "lucide-react";
 
 interface ServiceItem {
   name: string;
@@ -16,7 +16,7 @@ interface ServiceCategory {
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState("premium");
+  const [activeTab, setActiveTab] = useState("skin");
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const ServicesSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const premiumServices: ServiceCategory[] = [
+  const skinTreatments: ServiceCategory[] = [
     {
       title: "Janssen Skin Treatments",
       icon: <Sparkles className="w-6 h-6" />,
@@ -89,7 +89,7 @@ const ServicesSection = () => {
   const hairTreatments: ServiceCategory[] = [
     {
       title: "Keratin Treatment",
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Zap className="w-6 h-6" />,
       items: [
         { name: "Keratin Treatment (Short Hair)", price: "Rs. 10,000" },
         { name: "Keratin Treatment (Medium Hair)", price: "Rs. 15,000" },
@@ -98,7 +98,7 @@ const ServicesSection = () => {
     },
     {
       title: "Keratin Service Charges Only",
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Zap className="w-6 h-6" />,
       items: [
         { name: "Short Hair", price: "Rs. 5,000" },
         { name: "Medium Hair", price: "Rs. 7,500" },
@@ -164,7 +164,7 @@ const ServicesSection = () => {
 
   const colourServices: ServiceCategory[] = [
     {
-      title: "Revlon Colour",
+      title: "Revlon Colour Services",
       icon: <Palette className="w-6 h-6" />,
       items: [
         { name: "Hair Colour", price: "Rs. 1,300" },
@@ -175,7 +175,7 @@ const ServicesSection = () => {
       ],
     },
     {
-      title: "Keune Colour",
+      title: "Keune Colour Services",
       icon: <Palette className="w-6 h-6" />,
       items: [
         { name: "Hair Colour", price: "Rs. 1,500" },
@@ -188,7 +188,7 @@ const ServicesSection = () => {
       ],
     },
     {
-      title: "Just For Men Colour",
+      title: "Just For Men Colour Services",
       icon: <Palette className="w-6 h-6" />,
       items: [
         { name: "Hair Colour", price: "Rs. 2,500" },
@@ -215,25 +215,27 @@ const ServicesSection = () => {
   ];
 
   const tabs = [
-    { id: "premium", label: "Premium" },
-    { id: "groom", label: "Groom Packages" },
-    { id: "hair", label: "Hair Treatments" },
-    { id: "general", label: "General" },
-    { id: "haircut", label: "Haircut & Styling" },
-    { id: "colour", label: "Colour" },
+    { id: "skin", label: "Skin & Facial", icon: <Sparkles className="w-4 h-4" /> },
+    { id: "groom", label: "Groom Packages", icon: <Crown className="w-4 h-4" /> },
+    { id: "hair", label: "Hair Treatments", icon: <Zap className="w-4 h-4" /> },
+    { id: "general", label: "General", icon: <Users className="w-4 h-4" /> },
+    { id: "haircut", label: "Haircut & Styling", icon: <Scissors className="w-4 h-4" /> },
+    { id: "colour", label: "Colour", icon: <Palette className="w-4 h-4" /> },
   ];
 
   const getActiveServices = () => {
     switch (activeTab) {
-      case "premium": return premiumServices;
+      case "skin": return skinTreatments;
       case "groom": return groomPackages;
       case "hair": return hairTreatments;
       case "general": return generalServices;
       case "haircut": return haircutServices;
       case "colour": return colourServices;
-      default: return premiumServices;
+      default: return skinTreatments;
     }
   };
+
+  const isPremiumTab = activeTab === "skin" || activeTab === "groom";
 
   return (
     <section
@@ -257,12 +259,15 @@ const ServicesSection = () => {
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
             SERVICES & <span className="text-gradient-teal">PRICING</span>
           </h2>
-          <div className="w-20 h-1 gradient-teal mx-auto" />
+          <div className="w-20 h-1 gradient-teal mx-auto mb-6" />
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            From premium skin treatments to expert grooming services, discover our comprehensive menu designed for the modern gentleman.
+          </p>
         </div>
 
         {/* Tabs */}
         <div
-          className={`flex flex-wrap justify-center gap-2 md:gap-4 mb-12 transition-all duration-1000 delay-200 ${
+          className={`flex flex-wrap justify-center gap-2 md:gap-3 mb-12 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -270,19 +275,33 @@ const ServicesSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 md:px-6 py-2 md:py-3 font-display text-sm md:text-base tracking-wider transition-all duration-300 rounded-sm ${
+              className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 font-display text-xs md:text-sm tracking-wider transition-all duration-300 rounded-full border ${
                 activeTab === tab.id
-                  ? "gradient-teal text-charcoal-deep"
-                  : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80"
+                  ? tab.id === "skin" || tab.id === "groom"
+                    ? "gradient-gold text-charcoal-deep border-transparent"
+                    : "gradient-teal text-charcoal-deep border-transparent"
+                  : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
               }`}
             >
-              {tab.label}
+              {tab.icon}
+              <span className="hidden sm:inline">{tab.label}</span>
+              <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
             </button>
           ))}
         </div>
 
+        {/* Premium Badge for Skin & Groom */}
+        {isPremiumTab && (
+          <div className="flex justify-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/30">
+              <Crown className="w-4 h-4 text-secondary" />
+              <span className="text-sm text-secondary font-medium">Premium Services</span>
+            </div>
+          </div>
+        )}
+
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className={`grid ${getActiveServices().length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : 'md:grid-cols-2'} gap-8`}>
           {getActiveServices().map((category, categoryIndex) => (
             <div
               key={category.title}
@@ -292,11 +311,11 @@ const ServicesSection = () => {
               style={{ transitionDelay: `${categoryIndex * 150}ms` }}
             >
               {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`p-2 rounded-lg ${category.isPremium ? "gradient-gold" : "gradient-teal"}`}>
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border/30">
+                <div className={`p-2.5 rounded-lg ${category.isPremium ? "gradient-gold" : "gradient-teal"}`}>
                   {category.icon}
                 </div>
-                <h3 className="font-display text-2xl text-foreground">
+                <h3 className="font-display text-xl md:text-2xl text-foreground">
                   {category.title}
                 </h3>
               </div>
@@ -306,28 +325,45 @@ const ServicesSection = () => {
                 {category.items.map((item, index) => (
                   <div
                     key={index}
-                    className="group flex flex-col pb-4 border-b border-border/30 last:border-0 last:pb-0"
+                    className="group py-3 border-b border-border/20 last:border-0 last:pb-0 hover:bg-muted/30 -mx-2 px-2 rounded transition-colors"
                   >
                     <div className="flex justify-between items-start gap-4">
-                      <span className="text-foreground group-hover:text-primary transition-colors">
-                        {item.name}
-                      </span>
+                      <div className="flex-1">
+                        <span className="text-foreground group-hover:text-primary transition-colors font-medium">
+                          {item.name}
+                        </span>
+                        {item.description && (
+                          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                            Includes: {item.description}
+                          </p>
+                        )}
+                      </div>
                       <span className={`font-display text-lg whitespace-nowrap ${
                         category.isPremium ? "text-secondary" : "text-primary"
                       }`}>
                         {item.price}
                       </span>
                     </div>
-                    {item.description && (
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {item.description}
-                      </p>
-                    )}
                   </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div
+          className={`text-center mt-16 transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <p className="text-muted-foreground mb-6">Ready to elevate your style?</p>
+          <button
+            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="btn-primary"
+          >
+            BOOK YOUR APPOINTMENT
+          </button>
         </div>
       </div>
     </section>
