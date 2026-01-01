@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -11,40 +11,29 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
-  return (
-    <>
-      <Helmet>
-        <title>DANK Salon | Premium Men's Grooming & Styling</title>
-        <meta
-          name="description"
-          content="DANK Salon - Where modern artistry meets precision grooming. Premium haircuts, skin treatments, groom packages, and styling services in a sophisticated urban environment."
-        />
-        <meta
-          name="keywords"
-          content="salon, men's grooming, haircut, skin treatment, groom package, hair styling, beard grooming, keratin treatment"
-        />
-        <meta property="og:title" content="DANK Salon | Premium Men's Grooming & Styling" />
-        <meta
-          property="og:description"
-          content="Elevate your style at DANK Salon. Premium grooming services including haircuts, facials, groom packages, and professional styling."
-        />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://danksalon.com" />
-      </Helmet>
+  useEffect(() => {
+    document.title = "DANK Salon | Premium Men's Grooming & Styling";
+    
+    // Set meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', "DANK Salon - Where modern artistry meets precision grooming. Premium haircuts, skin treatments, groom packages, and styling services in a sophisticated urban environment.");
+    }
+  }, []);
 
-      <main className="min-h-screen bg-background">
-        <Navigation />
-        <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <GallerySection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <Footer />
-        <WhatsAppButton />
-      </main>
-    </>
+  return (
+    <main className="min-h-screen bg-background">
+      <Navigation />
+      <HeroSection />
+      <AboutSection />
+      <ServicesSection />
+      <GallerySection />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <ContactSection />
+      <Footer />
+      <WhatsAppButton />
+    </main>
   );
 };
 
