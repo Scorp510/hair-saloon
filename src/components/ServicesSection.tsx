@@ -16,7 +16,7 @@ interface ServiceCategory {
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeTab, setActiveTab] = useState("skin");
+  const [activeTab, setActiveTab] = useState("haircut");
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -215,12 +215,12 @@ const ServicesSection = () => {
   ];
 
   const tabs = [
-    { id: "skin", label: "Skin & Facial", icon: <Sparkles className="w-4 h-4" /> },
-    { id: "groom", label: "Groom Packages", icon: <Crown className="w-4 h-4" /> },
-    { id: "hair", label: "Hair Treatments", icon: <Zap className="w-4 h-4" /> },
-    { id: "general", label: "General", icon: <Users className="w-4 h-4" /> },
     { id: "haircut", label: "Haircut & Styling", icon: <Scissors className="w-4 h-4" /> },
     { id: "colour", label: "Colour", icon: <Palette className="w-4 h-4" /> },
+    { id: "general", label: "General", icon: <Users className="w-4 h-4" /> },
+    { id: "skin", label: "Skin & Facial", icon: <Sparkles className="w-4 h-4" /> },
+    { id: "hair", label: "Hair Treatments", icon: <Zap className="w-4 h-4" /> },
+    { id: "groom", label: "Groom Packages", icon: <Crown className="w-4 h-4" /> },
   ];
 
   const getActiveServices = () => {
