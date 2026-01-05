@@ -15,16 +15,16 @@
     --popover: 0 0% 6%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 180 100% 50%;
+    --primary: 43 100% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 100%;
+    --secondary: 35 100% 55%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 280 100% 60%;
+    --accent: 28 100% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -32,28 +32,28 @@
 
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 180 100% 50%;
+    --ring: 43 100% 50%;
 
     --radius: 0.5rem;
 
-    /* Custom colors - B&W with neon */
+    /* Custom colors - B&W with Gold */
     --charcoal: 0 0% 6%;
     --charcoal-deep: 0 0% 3%;
-    --neon-cyan: 180 100% 50%;
-    --neon-cyan-glow: 180 100% 65%;
-    --neon-purple: 280 100% 60%;
-    --neon-purple-glow: 280 100% 75%;
+    --gold: 43 100% 50%;
+    --gold-light: 48 100% 60%;
+    --gold-dark: 35 100% 40%;
+    --amber: 28 100% 45%;
     --pure-white: 0 0% 100%;
     --pure-black: 0 0% 0%;
 
-    /* Gradients - B&W with neon accents */
+    /* Gradients - B&W with gold accents */
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 0%) 0%, hsl(0 0% 8%) 50%, hsl(0 0% 0%) 100%);
-    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-cyan)) 0%, hsl(var(--neon-purple)) 100%);
-    --gradient-neon-glow: linear-gradient(135deg, hsl(var(--neon-cyan-glow)) 0%, hsl(var(--neon-purple-glow)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+    --gradient-gold-dark: linear-gradient(135deg, hsl(var(--gold-dark)) 0%, hsl(var(--gold)) 100%);
 
-    /* Shadows - Neon glow effects */
-    --shadow-neon: 0 0 30px hsl(var(--neon-cyan) / 0.4), 0 0 60px hsl(var(--neon-cyan) / 0.2);
-    --shadow-neon-purple: 0 0 30px hsl(var(--neon-purple) / 0.4), 0 0 60px hsl(var(--neon-purple) / 0.2);
+    /* Shadows - Gold glow effects */
+    --shadow-gold: 0 0 30px hsl(var(--gold) / 0.4), 0 0 60px hsl(var(--gold) / 0.2);
+    --shadow-gold-intense: 0 0 40px hsl(var(--gold) / 0.5), 0 0 80px hsl(var(--gold) / 0.3);
     --shadow-card: 0 10px 40px hsl(0 0% 0% / 0.7);
   }
 }
@@ -90,35 +90,31 @@
     animation: gradient-shift 15s ease infinite;
   }
 
-  .gradient-neon {
-    background: var(--gradient-neon);
+  .gradient-gold {
+    background: var(--gradient-gold);
   }
 
-  .gradient-neon-glow {
-    background: var(--gradient-neon-glow);
+  .gradient-gold-dark {
+    background: var(--gradient-gold-dark);
   }
 
-  .text-gradient-neon {
-    background: var(--gradient-neon);
+  .text-gradient-gold {
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .text-neon-glow {
-    text-shadow: 0 0 10px hsl(var(--neon-cyan) / 0.8), 0 0 30px hsl(var(--neon-cyan) / 0.5), 0 0 50px hsl(var(--neon-cyan) / 0.3);
+  .text-gold-glow {
+    text-shadow: 0 0 10px hsl(var(--gold) / 0.8), 0 0 30px hsl(var(--gold) / 0.5), 0 0 50px hsl(var(--gold) / 0.3);
   }
 
-  .text-neon-purple-glow {
-    text-shadow: 0 0 10px hsl(var(--neon-purple) / 0.8), 0 0 30px hsl(var(--neon-purple) / 0.5), 0 0 50px hsl(var(--neon-purple) / 0.3);
+  .glow-gold {
+    box-shadow: var(--shadow-gold);
   }
 
-  .glow-neon {
-    box-shadow: var(--shadow-neon);
-  }
-
-  .glow-neon-purple {
-    box-shadow: var(--shadow-neon-purple);
+  .glow-gold-intense {
+    box-shadow: var(--shadow-gold-intense);
   }
 
   .card-premium {
@@ -129,18 +125,18 @@
   .card-premium:hover {
     @apply border-primary;
     transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-neon), var(--shadow-card);
+    box-shadow: var(--shadow-gold), var(--shadow-card);
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-4 font-display text-lg tracking-wider transition-all duration-300 rounded-sm;
-    background: var(--gradient-neon);
+    background: var(--gradient-gold);
     color: hsl(var(--pure-black));
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-neon);
+    box-shadow: var(--shadow-gold);
   }
 
   .btn-secondary {

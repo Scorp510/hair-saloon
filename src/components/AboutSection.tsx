@@ -34,7 +34,7 @@ const AboutSection = () => {
       className="section-padding bg-charcoal-deep relative overflow-hidden"
     >
       {/* Background Accent */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-neon-cyan/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent pointer-events-none" />
 
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -88,9 +88,9 @@ const AboutSection = () => {
               ABOUT US
             </span>
             <h2 className="font-display text-5xl md:text-6xl text-foreground mt-4 mb-6">
-              CRAFTING <span className="text-gradient-neon">EXCELLENCE</span>
+              CRAFTING <span className="text-gradient-gold">EXCELLENCE</span>
             </h2>
-            <div className="w-20 h-1 gradient-neon mb-8" />
+            <div className="w-20 h-1 gradient-gold mb-8" />
 
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
               Where modern artistry meets precision grooming. DANK Salon delivers 

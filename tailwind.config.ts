@@ -51,12 +51,12 @@ export default {
           DEFAULT: "hsl(var(--charcoal))",
           deep: "hsl(var(--charcoal-deep))",
         },
-        neon: {
-          cyan: "hsl(var(--neon-cyan))",
-          "cyan-glow": "hsl(var(--neon-cyan-glow))",
-          purple: "hsl(var(--neon-purple))",
-          "purple-glow": "hsl(var(--neon-purple-glow))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
+          dark: "hsl(var(--gold-dark))",
         },
+        amber: "hsl(var(--amber))",
         pure: {
           white: "hsl(var(--pure-white))",
           black: "hsl(var(--pure-black))",
