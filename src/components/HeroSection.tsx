@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import dankLogo from "@/assets/dank-logo.jpg";
+import dankLogo from "@/assets/dank-logo-transparent.png";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
