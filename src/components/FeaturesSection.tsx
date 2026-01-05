@@ -63,9 +63,9 @@ const FeaturesSection = () => {
             WHY CHOOSE US
           </span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
-            THE DANK <span className="text-gradient-teal">DIFFERENCE</span>
+            THE DANK <span className="text-gradient-neon">DIFFERENCE</span>
           </h2>
-          <div className="w-20 h-1 gradient-teal mx-auto" />
+          <div className="w-20 h-1 gradient-neon mx-auto" />
         </div>
 
         {/* Features Grid */}
@@ -81,12 +81,12 @@ const FeaturesSection = () => {
               {/* Icon Container */}
               <div className="relative inline-flex items-center justify-center mb-8">
                 {/* Background Circle */}
-                <div className="absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-br from-gold/20 to-transparent -m-2" />
-                <div className="relative w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center text-secondary group-hover:border-gold group-hover:text-gold transition-all duration-500 group-hover:scale-110">
+                <div className="absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-br from-neon-cyan/20 to-transparent -m-2" />
+                <div className="relative w-20 h-20 rounded-full border-2 border-foreground flex items-center justify-center text-foreground group-hover:border-primary group-hover:text-primary transition-all duration-500 group-hover:scale-110">
                   {feature.icon}
                 </div>
                 {/* Glow Effect */}
-                <div className="absolute inset-0 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -m-2" style={{ boxShadow: "0 0 40px hsl(var(--gold) / 0.3)" }} />
+                <div className="absolute inset-0 w-24 h-24 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 -m-2" style={{ boxShadow: "0 0 40px hsl(var(--neon-cyan) / 0.4)" }} />
               </div>
 
               {/* Content */}

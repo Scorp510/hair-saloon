@@ -59,7 +59,7 @@ const ContactSection = () => {
       className="section-padding bg-charcoal relative overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--teal)/0.05)_0%,_transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--neon-cyan)/0.05)_0%,_transparent_50%)]" />
 
       <div className="container-custom relative z-10">
         {/* Header */}
@@ -72,9 +72,9 @@ const ContactSection = () => {
             GET IN TOUCH
           </span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
-            BOOK YOUR <span className="text-gradient-teal">APPOINTMENT</span>
+            BOOK YOUR <span className="text-gradient-neon">APPOINTMENT</span>
           </h2>
-          <div className="w-20 h-1 gradient-teal mx-auto" />
+          <div className="w-20 h-1 gradient-neon mx-auto" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
@@ -180,7 +180,7 @@ const ContactSection = () => {
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
-                    <div className="p-2 rounded-lg gradient-teal text-charcoal-deep">
+                    <div className="p-2 rounded-lg gradient-neon text-charcoal-deep">
                       {item.icon}
                     </div>
                     <div>
@@ -195,7 +195,7 @@ const ContactSection = () => {
             {/* Opening Hours */}
             <div className="card-premium">
               <h3 className="font-display text-2xl text-foreground mb-6 flex items-center gap-3">
-                <Clock className="w-6 h-6 text-secondary" />
+                <Clock className="w-6 h-6 text-primary" />
                 Opening Hours
               </h3>
               <div className="space-y-3">
@@ -249,7 +249,7 @@ const ContactSection = () => {
                   placeholder="Your email"
                   className="flex-1 px-4 py-2 bg-charcoal-deep border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
-                <button className="btn-gold py-2 px-4 text-sm">
+                <button className="btn-primary py-2 px-4 text-sm">
                   JOIN
                 </button>
               </div>
