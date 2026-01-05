@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import dankLogo from "@/assets/dank-logo-transparent.png";
+import dankLogo from "@/assets/dank-logo-new.png";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -18,13 +18,26 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Logo Image */}
-        <div className="mb-8 animate-fade-up">
-          <img 
-            src={dankLogo} 
-            alt="DANK Salon Logo" 
-            className="w-64 md:w-80 lg:w-96 mx-auto drop-shadow-2xl"
-          />
+        {/* Logo Image with Modern Styling */}
+        <div className="mb-8 animate-fade-up relative">
+          {/* Glow Effect Behind Logo */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-48 md:w-64 lg:w-80 h-48 md:h-64 lg:h-80 bg-gradient-to-br from-neon-cyan/20 via-transparent to-neon-purple/20 rounded-full blur-3xl" />
+          </div>
+          
+          {/* Logo Container */}
+          <div className="relative group">
+            {/* Outer Ring */}
+            <div className="absolute -inset-4 md:-inset-6 rounded-full border border-pure-white/10 group-hover:border-primary/30 transition-all duration-700" />
+            <div className="absolute -inset-8 md:-inset-12 rounded-full border border-pure-white/5 group-hover:border-neon-purple/20 transition-all duration-700" />
+            
+            {/* Logo */}
+            <img 
+              src={dankLogo} 
+              alt="DANK Salon Logo" 
+              className="w-48 md:w-64 lg:w-80 mx-auto relative z-10 drop-shadow-[0_0_30px_rgba(0,255,255,0.3)] group-hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.5)] transition-all duration-500 group-hover:scale-105"
+            />
+          </div>
         </div>
 
         {/* Tagline */}
