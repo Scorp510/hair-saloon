@@ -87,7 +87,7 @@ const TestimonialsSection = () => {
       className="section-padding bg-charcoal-deep relative overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--teal)/0.03)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--neon-cyan)/0.03)_0%,_transparent_70%)]" />
 
       <div className="container-custom relative z-10">
         {/* Header */}
@@ -100,9 +100,9 @@ const TestimonialsSection = () => {
             TESTIMONIALS
           </span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
-            CLIENT <span className="text-gradient-teal">REVIEWS</span>
+            CLIENT <span className="text-gradient-neon">REVIEWS</span>
           </h2>
-          <div className="w-20 h-1 gradient-teal mx-auto" />
+          <div className="w-20 h-1 gradient-neon mx-auto" />
         </div>
 
         {/* Carousel */}
@@ -123,7 +123,7 @@ const TestimonialsSection = () => {
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                 <Star
                   key={i}
-                  className="w-5 h-5 fill-secondary text-secondary"
+                  className="w-5 h-5 fill-primary text-primary"
                 />
               ))}
             </div>

@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import dankLogo from "@/assets/dank-logo.jpg";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -7,24 +8,23 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - Neon theme */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-teal/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gold/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-border/20 rounded-full opacity-30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-border/10 rounded-full opacity-20" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-neon-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-pure-white/10 rounded-full opacity-30" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-pure-white/5 rounded-full opacity-20" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Logo */}
+        {/* Logo Image */}
         <div className="mb-8 animate-fade-up">
-          <h1 className="font-display text-8xl md:text-[12rem] tracking-[0.3em] text-foreground leading-none">
-            DANK
-          </h1>
-          <p className="font-display text-xl md:text-2xl tracking-[0.5em] text-muted-foreground mt-2">
-            SALON
-          </p>
+          <img 
+            src={dankLogo} 
+            alt="DANK Salon Logo" 
+            className="w-64 md:w-80 lg:w-96 mx-auto drop-shadow-2xl"
+          />
         </div>
 
         {/* Tagline */}
@@ -32,7 +32,7 @@ const HeroSection = () => {
           className="text-2xl md:text-4xl font-display tracking-wider mb-4 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
-          <span className="text-gradient-teal">ELEVATE</span>{" "}
+          <span className="text-gradient-neon">ELEVATE</span>{" "}
           <span className="text-foreground">YOUR STYLE</span>
         </p>
 
@@ -65,12 +65,12 @@ const HeroSection = () => {
         <ChevronDown size={32} />
       </button>
 
-      {/* Side Decorative Elements */}
+      {/* Side Decorative Elements - Neon lines */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:block">
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
+        <div className="h-32 w-px bg-gradient-to-b from-transparent via-neon-cyan/50 to-transparent" />
       </div>
       <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block">
-        <div className="h-32 w-px bg-gradient-to-b from-transparent via-secondary/50 to-transparent" />
+        <div className="h-32 w-px bg-gradient-to-b from-transparent via-neon-purple/50 to-transparent" />
       </div>
     </section>
   );

@@ -257,9 +257,9 @@ const ServicesSection = () => {
             OUR MENU
           </span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
-            SERVICES & <span className="text-gradient-teal">PRICING</span>
+            SERVICES & <span className="text-gradient-neon">PRICING</span>
           </h2>
-          <div className="w-20 h-1 gradient-teal mx-auto mb-6" />
+          <div className="w-20 h-1 gradient-neon mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
             From premium skin treatments to expert grooming services, discover our comprehensive menu designed for the modern gentleman.
           </p>
@@ -278,8 +278,8 @@ const ServicesSection = () => {
               className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 font-display text-xs md:text-sm tracking-wider transition-all duration-300 rounded-full border ${
                 activeTab === tab.id
                   ? tab.id === "skin" || tab.id === "groom"
-                    ? "gradient-gold text-charcoal-deep border-transparent"
-                    : "gradient-teal text-charcoal-deep border-transparent"
+                    ? "gradient-neon-glow text-charcoal-deep border-transparent"
+                    : "gradient-neon text-charcoal-deep border-transparent"
                   : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
               }`}
             >
@@ -293,9 +293,9 @@ const ServicesSection = () => {
         {/* Premium Badge for Skin & Groom */}
         {isPremiumTab && (
           <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/30">
-              <Crown className="w-4 h-4 text-secondary" />
-              <span className="text-sm text-secondary font-medium">Premium Services</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon-purple/10 border border-neon-purple/30">
+              <Crown className="w-4 h-4 text-neon-purple" />
+              <span className="text-sm text-neon-purple font-medium">Premium Services</span>
             </div>
           </div>
         )}
@@ -312,7 +312,7 @@ const ServicesSection = () => {
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border/30">
-                <div className={`p-2.5 rounded-lg ${category.isPremium ? "gradient-gold" : "gradient-teal"}`}>
+                <div className={`p-2.5 rounded-lg ${category.isPremium ? "gradient-neon-glow" : "gradient-neon"}`}>
                   {category.icon}
                 </div>
                 <h3 className="font-display text-xl md:text-2xl text-foreground">
@@ -339,7 +339,7 @@ const ServicesSection = () => {
                         )}
                       </div>
                       <span className={`font-display text-lg whitespace-nowrap ${
-                        category.isPremium ? "text-secondary" : "text-primary"
+                        category.isPremium ? "text-neon-purple" : "text-primary"
                       }`}>
                         {item.price}
                       </span>

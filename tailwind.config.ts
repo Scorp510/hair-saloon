@@ -51,15 +51,16 @@ export default {
           DEFAULT: "hsl(var(--charcoal))",
           deep: "hsl(var(--charcoal-deep))",
         },
-        teal: {
-          DEFAULT: "hsl(var(--teal))",
-          glow: "hsl(var(--teal-glow))",
+        neon: {
+          cyan: "hsl(var(--neon-cyan))",
+          "cyan-glow": "hsl(var(--neon-cyan-glow))",
+          purple: "hsl(var(--neon-purple))",
+          "purple-glow": "hsl(var(--neon-purple-glow))",
         },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          light: "hsl(var(--gold-light))",
+        pure: {
+          white: "hsl(var(--pure-white))",
+          black: "hsl(var(--pure-black))",
         },
-        navy: "hsl(var(--navy))",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
