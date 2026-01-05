@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import salonInterior from "@/assets/salon-interior.png";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,12 +22,6 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const images = [
-    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=500&fit=crop",
-    "https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?w=400&h=300&fit=crop",
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=300&fit=crop",
-  ];
-
   return (
     <section
       ref={sectionRef}
@@ -38,44 +33,31 @@ const AboutSection = () => {
 
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image Gallery */}
+          {/* Salon Interior Image */}
           <div
-            className={`relative grid grid-cols-2 gap-4 transition-all duration-1000 ${
+            className={`relative transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-20"
             }`}
           >
-            <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-lg group">
+            <div className="relative overflow-hidden rounded-lg group">
+              {/* Gold border glow */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-gold/40 via-gold-light/30 to-gold/40 rounded-lg blur-sm opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative overflow-hidden rounded-lg border border-gold/20">
                 <img
-                  src={images[0]}
-                  alt="Salon interior"
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  src={salonInterior}
+                  alt="DANK Salon Interior - Civic Center Faisal Town"
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="relative overflow-hidden rounded-lg group">
-                <img
-                  src={images[1]}
-                  alt="Styling session"
-                  className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-            </div>
-            <div className="pt-8">
-              <div className="relative overflow-hidden rounded-lg group">
-                <img
-                  src={images[2]}
-                  alt="Barber at work"
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                {/* Gold overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/80 via-transparent to-gold/5 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </div>
             </div>
 
-            {/* Decorative Element */}
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-primary/30 rounded-lg" />
-            <div className="absolute -top-4 -right-4 w-16 h-16 border-2 border-secondary/30 rounded-lg" />
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-gold/30 rounded-lg" />
+            <div className="absolute -top-4 -right-4 w-16 h-16 border-2 border-gold-light/30 rounded-lg" />
           </div>
 
           {/* Content */}
