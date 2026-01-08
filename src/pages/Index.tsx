@@ -7,7 +7,6 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   useEffect(() => {
@@ -30,7 +29,6 @@ const Index = () => {
       <TestimonialsSection />
       <ContactSection />
       <Footer />
-      <WhatsAppButton />
     </main>
   );
 };
