@@ -41,15 +41,13 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "+92 300 1234567" },
-    { icon: <Mail className="w-5 h-5" />, label: "Email", value: "info@danksalon.com" },
-    { icon: <MapPin className="w-5 h-5" />, label: "Address", value: "123 Main Boulevard, DHA Phase 5, Lahore" },
+    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "04235195634" },
+    { icon: <Mail className="w-5 h-5" />, label: "Email", value: "danksalon1@gmail.com" },
+    { icon: <MapPin className="w-5 h-5" />, label: "Address", value: "DANK Salon Ground Floor 9, Civic Center, Faisal Town, Lahore Pakistan" },
   ];
 
   const hours = [
-    { day: "Monday - Thursday", time: "10:00 AM - 9:00 PM" },
-    { day: "Friday - Saturday", time: "10:00 AM - 10:00 PM" },
-    { day: "Sunday", time: "12:00 PM - 8:00 PM" },
+    { day: "Monday - Sunday", time: "10:00 AM - 12:00 AM" },
   ];
 
   return (
@@ -223,7 +221,7 @@ const ContactSection = () => {
             </h3>
             <div className="rounded-lg overflow-hidden border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.0693!2d74.2135!3d31.4504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCivic%20Center%20Faisal%20Town%2C%20Lahore!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.8!2d74.3058942!3d31.4751799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391903fbfe19bd5b%3A0xfe24c19c157bb7a7!2sDANK%20salon%C2%AE!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
                 width="100%"
                 height="220"
                 style={{ border: 0 }}
@@ -235,7 +233,7 @@ const ContactSection = () => {
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Civic+Center+Faisal+Town+Lahore"
+              href="https://www.google.com/maps/place/DANK+salon%C2%AE/@31.4751799,74.3058942,17z/data=!3m1!4b1!4m6!3m5!1s0x391903fbfe19bd5b:0xfe24c19c157bb7a7!8m2!3d31.4751799!4d74.3058942!16s%2Fg%2F11f3n3679b"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary mt-4 inline-block text-center"
@@ -259,7 +257,9 @@ const ContactSection = () => {
                   <Instagram className="w-6 h-6" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/danksalon/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
                 >
                   <Facebook className="w-6 h-6" />
