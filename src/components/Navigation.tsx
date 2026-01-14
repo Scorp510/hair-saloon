@@ -63,7 +63,7 @@ const Navigation = () => {
             }}
             className="flex items-center gap-3 group"
           >
-            <div className="relative">
+            <div className="relative bg-black rounded-lg p-1">
               <img 
                 src={logoImage} 
                 alt="DANK Salon" 
