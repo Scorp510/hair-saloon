@@ -208,50 +208,84 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="card-premium">
-              <h3 className="font-display text-2xl text-foreground mb-6">
-                Follow Us
-              </h3>
-              <div className="flex gap-4">
+            {/* Location Map & Social/Newsletter Row */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Location Map */}
+              <div className="card-premium">
+                <h3 className="font-display text-2xl text-foreground mb-4">
+                  Our Location
+                </h3>
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.0693!2d74.2135!3d31.4504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCivic%20Center%20Faisal%20Town%2C%20Lahore!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk"
+                    width="100%"
+                    height="180"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="DANK Salon Location"
+                    className="w-full"
+                  />
+                </div>
                 <a
-                  href="#"
-                  className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                  href="https://maps.google.com/?q=Civic+Center+Faisal+Town+Lahore"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary text-sm hover:underline mt-3 inline-block"
                 >
-                  <Instagram className="w-6 h-6" />
-                </a>
-                <a
-                  href="#"
-                  className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
-                >
-                  <Facebook className="w-6 h-6" />
-                </a>
-                <a
-                  href="#"
-                  className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
-                >
-                  <Send className="w-6 h-6" />
+                  View larger map
                 </a>
               </div>
-            </div>
 
-            {/* Newsletter */}
-            <div className="card-premium bg-gradient-to-br from-card to-muted">
-              <h3 className="font-display text-2xl text-foreground mb-3">
-                Newsletter
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Subscribe for exclusive offers and style tips
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-2 bg-charcoal-deep border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                />
-                <button className="btn-primary py-2 px-4 text-sm">
-                  JOIN
-                </button>
+              {/* Social & Newsletter Column */}
+              <div className="space-y-6">
+                {/* Social Links */}
+                <div className="card-premium">
+                  <h3 className="font-display text-xl text-foreground mb-4">
+                    Follow Us
+                  </h3>
+                  <div className="flex gap-4">
+                    <a
+                      href="#"
+                      className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                    >
+                      <Instagram className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                    >
+                      <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="#"
+                      className="p-3 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary transition-all"
+                    >
+                      <Send className="w-5 h-5" />
+                    </a>
+                  </div>
+                </div>
+
+                {/* Newsletter */}
+                <div className="card-premium bg-gradient-to-br from-card to-muted">
+                  <h3 className="font-display text-xl text-foreground mb-2">
+                    Newsletter
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    Subscribe for exclusive offers
+                  </p>
+                  <div className="flex gap-2">
+                    <input
+                      type="email"
+                      placeholder="Your email"
+                      className="flex-1 px-3 py-2 bg-charcoal-deep border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors text-sm"
+                    />
+                    <button className="btn-primary py-2 px-3 text-sm">
+                      JOIN
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
