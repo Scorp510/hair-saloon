@@ -1,5 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, Crown, Scissors, Palette, Users, Star, Zap } from "lucide-react";
+import {
+  Sparkles,
+  Crown,
+  Scissors,
+  Palette,
+  Users,
+  Star,
+  Zap,
+} from "lucide-react";
 
 interface ServiceItem {
   name: string;
@@ -42,11 +50,32 @@ const ServicesSection = () => {
       icon: <Sparkles className="w-6 h-6" />,
       isPremium: true,
       items: [
-        { name: "Complete Facial Treatment", price: "Rs. 8,000", description: "Polisher, Cleanser, Brightening Night Care, Steam, Scrub, Nose Strip, Mask, Ampule, Brightening Day Protection" },
-        { name: "Normal Facial Treatment", price: "Rs. 5,000", description: "Polisher, Cleanser, Steam, Scrub, Nose Strip, Mask" },
-        { name: "Polisher Treatment", price: "Rs. 4,000", description: "Polisher, Cleanser, Scrub, Nose Strip" },
-        { name: "Scrubbing Treatment", price: "Rs. 2,500", description: "Cleanser, Scrub, Nose Strip" },
-        { name: "Cleansing Treatment", price: "Rs. 1,500", description: "Cleanser, Nose Strip" },
+        {
+          name: "Complete Facial Treatment",
+          price: "Rs. 8,000",
+          description:
+            "Polisher, Cleanser, Brightening Night Care, Steam, Scrub, Nose Strip, Mask, Ampule, Brightening Day Protection",
+        },
+        {
+          name: "Normal Facial Treatment",
+          price: "Rs. 5,000",
+          description: "Polisher, Cleanser, Steam, Scrub, Nose Strip, Mask",
+        },
+        {
+          name: "Polisher Treatment",
+          price: "Rs. 4,000",
+          description: "Polisher, Cleanser, Scrub, Nose Strip",
+        },
+        {
+          name: "Scrubbing Treatment",
+          price: "Rs. 2,500",
+          description: "Cleanser, Scrub, Nose Strip",
+        },
+        {
+          name: "Cleansing Treatment",
+          price: "Rs. 1,500",
+          description: "Cleanser, Nose Strip",
+        },
       ],
     },
     {
@@ -54,11 +83,32 @@ const ServicesSection = () => {
       icon: <Sparkles className="w-6 h-6" />,
       isPremium: true,
       items: [
-        { name: "Complete Facial Treatment", price: "Rs. 6,000", description: "Polisher, Cleanser, Massage Cream, Steam, Scrub, Nose Strip, Mask, Ampule, Triple Action" },
-        { name: "Normal Facial Treatment", price: "Rs. 4,000", description: "Polisher, Cleanser, Steam, Scrub, Nose Strip, Mask" },
-        { name: "Polisher Treatment", price: "Rs. 3,000", description: "Polisher, Cleanser, Scrub, Nose Strip" },
-        { name: "Scrubbing Treatment", price: "Rs. 1,500", description: "Cleanser, Scrub, Nose Strip" },
-        { name: "Cleansing Treatment", price: "Rs. 1,000", description: "Cleanser, Nose Strip" },
+        {
+          name: "Complete Facial Treatment",
+          price: "Rs. 6,000",
+          description:
+            "Polisher, Cleanser, Massage Cream, Steam, Scrub, Nose Strip, Mask, Ampule, Triple Action",
+        },
+        {
+          name: "Normal Facial Treatment",
+          price: "Rs. 4,000",
+          description: "Polisher, Cleanser, Steam, Scrub, Nose Strip, Mask",
+        },
+        {
+          name: "Polisher Treatment",
+          price: "Rs. 3,000",
+          description: "Polisher, Cleanser, Scrub, Nose Strip",
+        },
+        {
+          name: "Scrubbing Treatment",
+          price: "Rs. 1,500",
+          description: "Cleanser, Scrub, Nose Strip",
+        },
+        {
+          name: "Cleansing Treatment",
+          price: "Rs. 1,000",
+          description: "Cleanser, Nose Strip",
+        },
       ],
     },
   ];
@@ -69,9 +119,24 @@ const ServicesSection = () => {
       icon: <Crown className="w-6 h-6" />,
       isPremium: true,
       items: [
-        { name: "Groom Package - 1st Day", price: "Rs. 15,000", description: "Facial Treatment, Manicure & Pedicure, Haircut, Beard, Makeup Touching, Hair Styling" },
-        { name: "Groom Package - 2nd Day", price: "Rs. 5,000", description: "Just For Men Hair Polish, Beard, Makeup Touching, Hair Styling" },
-        { name: "Groom Package - 3rd Day", price: "Rs. 5,000", description: "Scrubbing Treatment, Beard, Makeup Touching, Hair Styling" },
+        {
+          name: "Groom Package - 1st Day",
+          price: "Rs. 15,000",
+          description:
+            "Facial Treatment, Manicure & Pedicure, Haircut, Beard, Makeup Touching, Hair Styling",
+        },
+        {
+          name: "Groom Package - 2nd Day",
+          price: "Rs. 5,000",
+          description:
+            "Just For Men Hair Polish, Beard, Makeup Touching, Hair Styling",
+        },
+        {
+          name: "Groom Package - 3rd Day",
+          price: "Rs. 5,000",
+          description:
+            "Scrubbing Treatment, Beard, Makeup Touching, Hair Styling",
+        },
       ],
     },
     {
@@ -79,9 +144,24 @@ const ServicesSection = () => {
       icon: <Crown className="w-6 h-6" />,
       isPremium: true,
       items: [
-        { name: "Groom Package - 1st Day", price: "Rs. 13,000", description: "Facial Treatment, Manicure & Pedicure, Haircut, Beard, Makeup Touching, Hair Styling" },
-        { name: "Groom Package - 2nd Day", price: "Rs. 4,000", description: "Keune Hair Polish, Beard, Makeup Touching, Hair Styling" },
-        { name: "Groom Package - 3rd Day", price: "Rs. 4,000", description: "Scrubbing Treatment, Beard, Makeup Touching, Hair Styling" },
+        {
+          name: "Groom Package - 1st Day",
+          price: "Rs. 13,000",
+          description:
+            "Facial Treatment, Manicure & Pedicure, Haircut, Beard, Makeup Touching, Hair Styling",
+        },
+        {
+          name: "Groom Package - 2nd Day",
+          price: "Rs. 4,000",
+          description:
+            "Keune Hair Polish, Beard, Makeup Touching, Hair Styling",
+        },
+        {
+          name: "Groom Package - 3rd Day",
+          price: "Rs. 4,000",
+          description:
+            "Scrubbing Treatment, Beard, Makeup Touching, Hair Styling",
+        },
       ],
     },
   ];
@@ -215,23 +295,46 @@ const ServicesSection = () => {
   ];
 
   const tabs = [
-    { id: "haircut", label: "Haircut & Styling", icon: <Scissors className="w-4 h-4" /> },
+    {
+      id: "haircut",
+      label: "Haircut & Styling",
+      icon: <Scissors className="w-4 h-4" />,
+    },
     { id: "colour", label: "Colour", icon: <Palette className="w-4 h-4" /> },
-    { id: "general", label: "Massage Treatments", icon: <Users className="w-4 h-4" /> },
-    { id: "skin", label: "Skin & Facial", icon: <Sparkles className="w-4 h-4" /> },
+    {
+      id: "general",
+      label: "Massage Treatments",
+      icon: <Users className="w-4 h-4" />,
+    },
+    {
+      id: "skin",
+      label: "Skin & Facial",
+      icon: <Sparkles className="w-4 h-4" />,
+    },
     { id: "hair", label: "Hair Treatments", icon: <Zap className="w-4 h-4" /> },
-    { id: "groom", label: "Groom Packages", icon: <Crown className="w-4 h-4" /> },
+    {
+      id: "groom",
+      label: "Groom Packages",
+      icon: <Crown className="w-4 h-4" />,
+    },
   ];
 
   const getActiveServices = () => {
     switch (activeTab) {
-      case "skin": return skinTreatments;
-      case "groom": return groomPackages;
-      case "hair": return hairTreatments;
-      case "general": return generalServices;
-      case "haircut": return haircutServices;
-      case "colour": return colourServices;
-      default: return skinTreatments;
+      case "skin":
+        return skinTreatments;
+      case "groom":
+        return groomPackages;
+      case "hair":
+        return hairTreatments;
+      case "general":
+        return generalServices;
+      case "haircut":
+        return haircutServices;
+      case "colour":
+        return colourServices;
+      default:
+        return skinTreatments;
     }
   };
 
@@ -261,7 +364,8 @@ const ServicesSection = () => {
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From premium skin treatments to expert grooming services, discover our comprehensive menu designed for the modern gentleman.
+            From premium skin treatments to expert grooming services, discover
+            our comprehensive menu designed for the modern gentleman.
           </p>
         </div>
 
@@ -285,7 +389,7 @@ const ServicesSection = () => {
             >
               {tab.icon}
               <span className="hidden sm:inline">{tab.label}</span>
-              <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
+              <span className="sm:hidden">{tab.label.split(" ")[0]}</span>
             </button>
           ))}
         </div>
@@ -295,24 +399,46 @@ const ServicesSection = () => {
           <div className="flex justify-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/30">
               <Crown className="w-4 h-4 text-gold" />
-              <span className="text-sm text-gold font-medium">Premium Services</span>
+              <span className="text-sm text-gold font-medium">
+                Premium Services
+              </span>
             </div>
           </div>
         )}
 
         {/* Services Grid */}
-        <div className={`grid ${getActiveServices().length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : 'md:grid-cols-2'} gap-8`}>
+        <div
+          className={`grid ${
+            getActiveServices().length === 1
+              ? "md:grid-cols-1 max-w-2xl mx-auto"
+              : "md:grid-cols-2"
+          } gap-8`}
+        >
           {getActiveServices().map((category, categoryIndex) => (
             <div
               key={category.title}
               className={`card-premium transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              } ${
+                getActiveServices().length % 2 === 0
+                  ? ""
+                  : categoryIndex === getActiveServices().length - 1
+                  ? "col-span-2"
+                  : "col-span-1"
               }`}
               style={{ transitionDelay: `${categoryIndex * 150}ms` }}
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border/30">
-                <div className={`p-2.5 rounded-lg ${category.isPremium ? "gradient-gold glow-gold" : "gradient-gold"}`}>
+                <div
+                  className={`p-2.5 rounded-lg ${
+                    category.isPremium
+                      ? "gradient-gold glow-gold"
+                      : "gradient-gold"
+                  }`}
+                >
                   {category.icon}
                 </div>
                 <h3 className="font-display text-xl md:text-2xl text-foreground">
@@ -338,9 +464,13 @@ const ServicesSection = () => {
                           </p>
                         )}
                       </div>
-                      <span className={`font-display text-lg whitespace-nowrap ${
-                        category.isPremium ? "text-gold-light" : "text-primary"
-                      }`}>
+                      <span
+                        className={`font-display text-lg whitespace-nowrap ${
+                          category.isPremium
+                            ? "text-gold-light"
+                            : "text-primary"
+                        }`}
+                      >
                         {item.price}
                       </span>
                     </div>
@@ -357,9 +487,15 @@ const ServicesSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <p className="text-muted-foreground mb-6">Ready to elevate your style?</p>
+          <p className="text-muted-foreground mb-6">
+            Ready to elevate your style?
+          </p>
           <button
-            onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() =>
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
             className="btn-primary"
           >
             BOOK YOUR APPOINTMENT

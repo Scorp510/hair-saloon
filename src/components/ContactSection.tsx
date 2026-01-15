@@ -1,6 +1,18 @@
 import { useEffect, useRef, useState } from "react";
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, Send } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Instagram,
+  Facebook,
+  Send,
+  Play,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import vid1 from "@/assets/vid1.mp4";
+import vid2 from "@/assets/vid2.mp4";
+import vid3 from "@/assets/vid3.mp4";
 
 const ContactSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,8 +23,16 @@ const ContactSection = () => {
     service: "",
     message: "",
   });
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const { toast } = useToast();
+
+  const portfolioVideos = [
+    { id: 1, src: vid1 },
+    { id: 2, src: vid2 },
+    { id: 3, src: vid3 },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,20 +55,46 @@ const ContactSection = () => {
     e.preventDefault();
     toast({
       title: "Booking Request Sent!",
-      description: "We'll get back to you within 24 hours to confirm your appointment.",
+      description:
+        "We'll get back to you within 24 hours to confirm your appointment.",
     });
     setFormData({ name: "", email: "", phone: "", service: "", message: "" });
   };
 
+  const handleVideoPlay = (index: number) => {
+    // Pause all other videos
+    videoRefs.current.forEach((video, i) => {
+      if (video && i !== index) {
+        video.pause();
+      }
+    });
+    setPlayingVideo(index);
+  };
+
+  const handleVideoPause = () => {
+    setPlayingVideo(null);
+  };
+
   const contactInfo = [
-    { icon: <Phone className="w-5 h-5" />, label: "Phone", value: "04235195634" },
-    { icon: <Mail className="w-5 h-5" />, label: "Email", value: "danksalon1@gmail.com" },
-    { icon: <MapPin className="w-5 h-5" />, label: "Address", value: "DANK Salon Ground Floor 9, Civic Center, Faisal Town, Lahore Pakistan" },
+    {
+      icon: <Phone className="w-5 h-5" />,
+      label: "Phone",
+      value: "04235195634",
+    },
+    {
+      icon: <Mail className="w-5 h-5" />,
+      label: "Email",
+      value: "danksalon1@gmail.com",
+    },
+    {
+      icon: <MapPin className="w-5 h-5" />,
+      label: "Address",
+      value:
+        "DANK Salon Ground Floor 9, Civic Center, Faisal Town, Lahore Pakistan",
+    },
   ];
 
-  const hours = [
-    { day: "Monday - Sunday", time: "10:00 AM - 12:00 AM" },
-  ];
+  const hours = [{ day: "Monday - Sunday", time: "10:00 AM - 12:00 AM" }];
 
   return (
     <section
@@ -60,9 +106,107 @@ const ContactSection = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(var(--gold)/0.05)_0%,_transparent_50%)]" />
 
       <div className="container-custom relative z-10">
+        {/* Ali Nasir Introduction Section */}
+        <div
+          className={`mb-20 transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-5xl text-foreground mb-6">
+              Owner and Director Stylist –{" "}
+              <span className="text-gradient-gold">Ali Nasir</span>
+            </h2>
+            <div className="w-20 h-1 gradient-gold mx-auto mb-8" />
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="card-premium p-8 md:p-12">
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 text-center">
+                With over{" "}
+                <span className="text-primary font-semibold">20+ years</span> of
+                distinguished experience in the styling industry, Ali Nasir
+                stands as a master craftsman and visionary leader in the world
+                of premium grooming and beauty. His unwavering passion for
+                excellence, combined with an innate understanding of
+                contemporary aesthetics, has established him as one of the most
+                sought-after stylists in the region.
+              </p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 text-center">
+                Ali's expertise transcends traditional styling—he is a true
+                artist who transforms each client's vision into reality,
+                creating looks that are both timeless and cutting-edge. His
+                commitment to personalized service ensures that every
+                appointment is tailored to the individual, reflecting their
+                unique style, personality, and lifestyle. This dedication to
+                bespoke excellence has earned him a reputation for unparalleled
+                client satisfaction and a loyal following of discerning clients
+                who trust his vision and skill.
+              </p>
+              <p className="text-lg md:text-xl text-foreground leading-relaxed text-center">
+                At DANK Salon, Ali Nasir brings his wealth of knowledge, refined
+                techniques, and genuine passion for beauty and grooming to
+                create an experience that goes beyond the ordinary. Welcome to a
+                world where artistry meets precision, and where your
+                transformation begins with a master's touch.
+              </p>
+            </div>
+          </div>
+
+          {/* Video Portfolio Section */}
+          <div className="mt-16">
+            <h3 className="font-display text-2xl md:text-3xl text-foreground text-center mb-8">
+              Portfolio <span className="text-gradient-gold">Reels</span>
+            </h3>
+            <div className="flex flex-col gap-6 max-w-4xl mx-auto">
+              {portfolioVideos.map((video, index) => (
+                <div
+                  key={video.id}
+                  className="card-premium overflow-hidden group cursor-pointer"
+                  onClick={() => {
+                    const videoEl = videoRefs.current[index];
+                    if (videoEl) {
+                      if (playingVideo === index) {
+                        videoEl.pause();
+                        handleVideoPause();
+                      } else {
+                        handleVideoPlay(index);
+                        videoEl.play();
+                      }
+                    }
+                  }}
+                >
+                  <div className="relative aspect-video bg-charcoal-deep">
+                    <video
+                      ref={(el) => (videoRefs.current[index] = el)}
+                      src={video.src}
+                      className="w-full h-full object-cover"
+                      loop
+                      muted
+                      playsInline
+                      onPlay={() => handleVideoPlay(index)}
+                      onPause={handleVideoPause}
+                    />
+                    {playingVideo !== index && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                        <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center group-hover:bg-primary transition-colors">
+                          <Play
+                            className="w-8 h-8 text-charcoal-deep ml-1"
+                            fill="currentColor"
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-16 transition-all duration-1000 delay-200 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -70,7 +214,8 @@ const ContactSection = () => {
             GET IN TOUCH
           </span>
           <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
-            BOOK YOUR <span className="text-gradient-gold">APPOINTMENT</span>
+            BOOK YOUR <span className="text-gradient-gold">APPOINTMENT</span>{" "}
+            WITH ALI NASIR
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto" />
         </div>
@@ -78,8 +223,10 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Contact Form */}
           <div
-            className={`transition-all duration-1000 delay-200 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            className={`transition-all duration-1000 delay-400 ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-10"
             }`}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -92,7 +239,9 @@ const ContactSection = () => {
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                     placeholder="John Doe"
                   />
@@ -105,7 +254,9 @@ const ContactSection = () => {
                     type="tel"
                     required
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                     placeholder="+92 300 1234567"
                   />
@@ -120,7 +271,9 @@ const ContactSection = () => {
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                   placeholder="you@example.com"
                 />
@@ -132,7 +285,9 @@ const ContactSection = () => {
                 </label>
                 <select
                   value={formData.service}
-                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, service: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors"
                 >
                   <option value="">Select a service</option>
@@ -152,7 +307,9 @@ const ContactSection = () => {
                 <textarea
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-muted border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="Any special requests or preferred timing..."
                 />
@@ -166,8 +323,10 @@ const ContactSection = () => {
 
           {/* Contact Info */}
           <div
-            className={`space-y-8 transition-all duration-1000 delay-400 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            className={`space-y-8 transition-all duration-1000 delay-600 ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-10"
             }`}
           >
             {/* Contact Details */}
@@ -182,7 +341,9 @@ const ContactSection = () => {
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {item.label}
+                      </p>
                       <p className="text-foreground">{item.value}</p>
                     </div>
                   </div>
@@ -198,9 +359,14 @@ const ContactSection = () => {
               </h3>
               <div className="space-y-3">
                 {hours.map((item) => (
-                  <div key={item.day} className="flex justify-between items-center py-2 border-b border-border/30 last:border-0">
+                  <div
+                    key={item.day}
+                    className="flex justify-between items-center py-2 border-b border-border/30 last:border-0"
+                  >
                     <span className="text-muted-foreground">{item.day}</span>
-                    <span className="text-foreground font-medium">{item.time}</span>
+                    <span className="text-foreground font-medium">
+                      {item.time}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -210,7 +376,7 @@ const ContactSection = () => {
 
         {/* Location & Social Row - Full Width Below Form */}
         <div
-          className={`grid md:grid-cols-2 gap-8 mt-12 transition-all duration-1000 delay-600 ${
+          className={`grid md:grid-cols-2 gap-8 mt-12 transition-all duration-1000 delay-800 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -287,9 +453,7 @@ const ContactSection = () => {
                   placeholder="Your email"
                   className="flex-1 px-4 py-2 bg-charcoal-deep border border-border rounded-lg text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
                 />
-                <button className="btn-primary py-2 px-4 text-sm">
-                  JOIN
-                </button>
+                <button className="btn-primary py-2 px-4 text-sm">JOIN</button>
               </div>
             </div>
           </div>
