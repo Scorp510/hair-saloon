@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import abdurRehman from "@/assets/abdur rehman.png";
+import ahmedGul from "@/assets/ahemd gul.png";
+import hamza from "@/assets/hamza.png";
+import awais from "@/assets/awais.png";
 
 interface Testimonial {
   id: number;
@@ -35,33 +39,33 @@ const TestimonialsSection = () => {
   const testimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Ahmed Hassan",
+      name: "Abaid Ur Rehman",
       role: "Regular Client",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      image: abdurRehman,
       rating: 5,
       text: "DANK Salon has transformed my grooming experience. The attention to detail and premium products make every visit worthwhile. Highly recommend the Janssen facial treatment!",
     },
     {
       id: 2,
-      name: "Saad Khan",
+      name: "Ahmed Gul",
       role: "Groom Package Client",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      image: ahmedGul,
       rating: 5,
       text: "Got the complete groom package for my wedding. The team made me look and feel amazing for my special day. Professional service from start to finish.",
     },
     {
       id: 3,
-      name: "Bilal Raza",
+      name: "Hamza Ali",
       role: "Monthly Subscriber",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+      image: hamza,
       rating: 5,
       text: "Been coming here for 2 years now. The consistency in quality and the modern vibe of the salon keeps me coming back. Best haircuts in town!",
     },
     {
       id: 4,
-      name: "Usman Ali",
+      name: "Muhammad Owais ",
       role: "First-time Client",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
+      image: awais,
       rating: 5,
       text: "Walked in for a simple haircut, walked out feeling like a million bucks. The ambiance, service, and skill of the stylists exceeded all expectations.",
     },
@@ -72,7 +76,9 @@ const TestimonialsSection = () => {
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
   };
 
   useEffect(() => {
@@ -121,10 +127,7 @@ const TestimonialsSection = () => {
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-8">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-5 h-5 fill-primary text-primary"
-                />
+                <Star key={i} className="w-5 h-5 fill-primary text-primary" />
               ))}
             </div>
 

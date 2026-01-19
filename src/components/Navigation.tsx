@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Scissors } from "lucide-react";
-import logoImage from "@/assets/dank-logo-transparent.png";
+import logoImage from "@/assets/dank-logo-transparent.jpg";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +12,13 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Track active section
-      const sections = ["about", "services", "features", "testimonials", "videos", "contact"];
+      const sections = [
+        "about",
+        "services",
+        "features",
+        "testimonials",
+        "contact",
+      ];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -64,10 +70,10 @@ const Navigation = () => {
             }}
             className="flex items-center gap-3 group"
           >
-            <div className="relative">
-              <img 
-                src={logoImage} 
-                alt="DANK Salon" 
+            <div className="relative bg-black rounded-lg p-1">
+              <img
+                src={logoImage}
+                alt="DANK Salon"
                 className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -109,10 +115,22 @@ const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden relative w-10 h-10 flex items-center justify-center text-foreground rounded-full border border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
           >
-            <span className={`absolute transition-all duration-300 ${isMobileMenuOpen ? "rotate-180 opacity-0" : "rotate-0 opacity-100"}`}>
+            <span
+              className={`absolute transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "rotate-180 opacity-0"
+                  : "rotate-0 opacity-100"
+              }`}
+            >
               <Menu size={20} />
             </span>
-            <span className={`absolute transition-all duration-300 ${isMobileMenuOpen ? "rotate-0 opacity-100" : "-rotate-180 opacity-0"}`}>
+            <span
+              className={`absolute transition-all duration-300 ${
+                isMobileMenuOpen
+                  ? "rotate-0 opacity-100"
+                  : "-rotate-180 opacity-0"
+              }`}
+            >
               <X size={20} />
             </span>
           </button>
