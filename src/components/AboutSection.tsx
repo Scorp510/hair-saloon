@@ -32,7 +32,7 @@ const AboutSection = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent pointer-events-none" />
 
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Salon Interior Image */}
           <div
             className={`relative transition-all duration-1000 ${
@@ -69,36 +69,36 @@ const AboutSection = () => {
             <span className="text-primary font-display text-lg tracking-widest">
               ABOUT US
             </span>
-            <h2 className="font-display text-5xl md:text-6xl text-foreground mt-4 mb-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-foreground mt-4 mb-6">
               CRAFTING <span className="text-gradient-gold">EXCELLENCE</span>
             </h2>
             <div className="w-20 h-1 gradient-gold mb-8" />
 
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-6">
               Where modern artistry meets precision grooming. DANK Salon delivers 
               cutting-edge styles in a sophisticated urban environment. Our team of 
               expert stylists combines years of experience with the latest techniques 
               to create looks that define individuality.
             </p>
 
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed mb-8">
               From classic cuts to avant-garde transformations, we believe every 
               client deserves a personalized experience that exceeds expectations. 
               Step into DANK and discover your signature style.
             </p>
 
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-6 sm:gap-8">
               <div>
-                <p className="font-display text-4xl text-primary">10+</p>
-                <p className="text-muted-foreground text-sm">Years Experience</p>
+                <p className="font-display text-3xl sm:text-4xl text-primary">10+</p>
+                <p className="text-muted-foreground text-xs sm:text-sm">Years Experience</p>
               </div>
               <div>
-                <p className="font-display text-4xl text-foreground">5000+</p>
-                <p className="text-muted-foreground text-sm">Happy Clients</p>
+                <p className="font-display text-3xl sm:text-4xl text-foreground">5000+</p>
+                <p className="text-muted-foreground text-xs sm:text-sm">Happy Clients</p>
               </div>
               <div>
-                <p className="font-display text-4xl text-foreground">15+</p>
-                <p className="text-muted-foreground text-sm">Expert Stylists</p>
+                <p className="font-display text-3xl sm:text-4xl text-foreground">15+</p>
+                <p className="text-muted-foreground text-xs sm:text-sm">Expert Stylists</p>
               </div>
             </div>
           </div>

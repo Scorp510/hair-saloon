@@ -256,7 +256,7 @@ const ServicesSection = () => {
           <span className="text-primary font-display text-lg tracking-widest">
             OUR MENU
           </span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mt-4 mb-4 px-4">
             SERVICES & <span className="text-gradient-gold">PRICING</span>
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto mb-6" />
@@ -267,7 +267,7 @@ const ServicesSection = () => {
 
         {/* Tabs */}
         <div
-          className={`flex flex-wrap justify-center gap-2 md:gap-3 mb-12 transition-all duration-1000 delay-200 ${
+          className={`flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 transition-all duration-1000 delay-200 px-2 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -275,7 +275,7 @@ const ServicesSection = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 font-display text-xs md:text-sm tracking-wider transition-all duration-300 rounded-full border ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 font-display text-xs sm:text-sm tracking-wider transition-all duration-300 rounded-full border ${
                 activeTab === tab.id
                   ? tab.id === "skin" || tab.id === "groom"
                     ? "gradient-gold text-charcoal-deep border-transparent glow-gold"
@@ -301,7 +301,7 @@ const ServicesSection = () => {
         )}
 
         {/* Services Grid */}
-        <div className={`grid ${getActiveServices().length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : 'md:grid-cols-2'} gap-8`}>
+        <div className={`grid ${getActiveServices().length === 1 ? 'md:grid-cols-1 max-w-2xl mx-auto' : 'grid-cols-1 md:grid-cols-2'} gap-6 md:gap-8`}>
           {getActiveServices().map((category, categoryIndex) => (
             <div
               key={category.title}

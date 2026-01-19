@@ -71,13 +71,13 @@ const ContactSection = () => {
           <span className="text-primary font-display text-lg tracking-widest">
             GET IN TOUCH
           </span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mt-4 mb-4 px-4">
             BOOK YOUR <span className="text-gradient-gold">APPOINTMENT</span>
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20">
           {/* Contact Form */}
           <div
             className={`transition-all duration-1000 delay-200 ${
@@ -85,7 +85,7 @@ const ContactSection = () => {
             }`}
           >
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-muted-foreground mb-2">
                     Full Name

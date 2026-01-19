@@ -99,7 +99,7 @@ const TestimonialsSection = () => {
           <span className="text-primary font-display text-lg tracking-widest">
             TESTIMONIALS
           </span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mt-4 mb-4 px-4">
             CLIENT <span className="text-gradient-gold">REVIEWS</span>
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto" />
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Testimonial Card */}
-          <div className="card-premium text-center py-12 px-8 md:px-16 relative">
+          <div className="card-premium text-center py-8 sm:py-12 px-6 sm:px-8 md:px-16 relative">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-8">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (

@@ -42,7 +42,7 @@ const HeroSection = () => {
 
         {/* Tagline */}
         <p
-          className="text-2xl md:text-4xl font-display tracking-wider mb-4 animate-fade-up"
+          className="text-xl sm:text-2xl md:text-4xl font-display tracking-wider mb-4 animate-fade-up px-4"
           style={{ animationDelay: "0.2s" }}
         >
           <span className="text-gradient-gold">ELEVATE</span>{" "}
@@ -50,7 +50,7 @@ const HeroSection = () => {
         </p>
 
         <p
-          className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-12 animate-fade-up"
+          className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-8 sm:mb-12 px-4 animate-fade-up"
           style={{ animationDelay: "0.4s" }}
         >
           Where modern artistry meets precision grooming
@@ -63,7 +63,7 @@ const HeroSection = () => {
         >
           <button
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="btn-primary text-xl px-12 py-5 animate-pulse-slow"
+            className="btn-primary text-base sm:text-lg md:text-xl px-8 sm:px-12 py-4 sm:py-5 animate-pulse-slow"
           >
             BOOK NOW
           </button>

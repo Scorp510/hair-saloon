@@ -62,14 +62,14 @@ const FeaturesSection = () => {
           <span className="text-primary font-display text-lg tracking-widest">
             WHY CHOOSE US
           </span>
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mt-4 mb-4">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground mt-4 mb-4 px-4">
             THE DANK <span className="text-gradient-gold">DIFFERENCE</span>
           </h2>
           <div className="w-20 h-1 gradient-gold mx-auto" />
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {features.map((feature, index) => (
             <div
               key={feature.title}

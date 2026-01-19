@@ -12,7 +12,7 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 50);
 
       // Track active section
-      const sections = ["about", "services", "features", "testimonials", "contact"];
+      const sections = ["about", "services", "features", "testimonials", "videos", "contact"];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -33,6 +33,7 @@ const Navigation = () => {
     { name: "Services", href: "#services", section: "services" },
     { name: "Why Us", href: "#features", section: "features" },
     { name: "Reviews", href: "#testimonials", section: "testimonials" },
+    { name: "Videos", href: "#videos", section: "videos" },
     { name: "Contact", href: "#contact", section: "contact" },
   ];
 
