@@ -23,12 +23,12 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection />
+      {/* <HeroSection /> */}
       <AboutSection />
+      <VideosSection />
       <ServicesSection />
       <FeaturesSection />
       <TestimonialsSection />
-      <VideosSection />
       <ContactSection />
       <Footer />
     </main>

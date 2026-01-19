@@ -124,7 +124,7 @@ const ContactSection = () => {
             <div className="card-premium p-8 md:p-12">
               <p className="text-lg md:text-xl text-foreground leading-relaxed mb-6 text-center">
                 With over{" "}
-                <span className="text-primary font-semibold">20+ years</span> of
+                <span className="text-primary font-semibold">10+ years</span> of
                 distinguished experience in the styling industry, Ali Nasir
                 stands as a master craftsman and visionary leader in the world
                 of premium grooming and beauty. His unwavering passion for

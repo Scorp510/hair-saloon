@@ -1,9 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import salonInterior from "@/assets/salon-interior.png";
+import { Scissors } from "lucide-react";
 
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+};
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,19 +95,18 @@ const AboutSection = () => {
               Step into DANK and discover your signature style.
             </p>
 
-            <div className="flex flex-wrap gap-6 sm:gap-8">
-              <div>
-                <p className="font-display text-3xl sm:text-4xl text-primary">10+</p>
-                <p className="text-muted-foreground text-xs sm:text-sm">Years Experience</p>
+            <div className="flex gap-4 sm:gap-6 items-center mt-4">
+              <div className="flex items-center justify-center w-44 h-12 bg-gradient-to-br from-gold/10 via-gold-light/5 to-transparent rounded-lg shadow-sm border border-gold/20 px-3">
+                <p className="font-display text-xl sm:text-2xl text-primary mr-2 tracking-tight mb-0">10<span className="text-gradient-gold">+</span></p>
+                <p className="text-muted-foreground text-xs sm:text-sm font-medium tracking-wide mb-0">Years Experience</p>
               </div>
-              <div>
-                <p className="font-display text-3xl sm:text-4xl text-foreground">5000+</p>
-                <p className="text-muted-foreground text-xs sm:text-sm">Happy Clients</p>
-              </div>
-              <div>
-                <p className="font-display text-3xl sm:text-4xl text-foreground">15+</p>
-                <p className="text-muted-foreground text-xs sm:text-sm">Expert Stylists</p>
-              </div>
+              <button
+                onClick={() => scrollToSection("#contact")}
+                className="flex items-center justify-center w-44 h-12 rounded-lg bg-gradient-to-r from-gold via-primary to-gold-light hover:from-primary/90 hover:to-gold/90 text-primary-foreground shadow-gold transition-all duration-300 border border-gold/20 focus:outline-none focus:ring-2 focus:ring-primary/40 px-3"
+              >
+                <Scissors className="w-5 h-5 mr-2" />
+                <span className="font-display tracking-wide text-sm font-semibold">BOOK NOW</span>
+              </button>
             </div>
           </div>
         </div>

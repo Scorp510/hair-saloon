@@ -55,27 +55,6 @@ const VideosSection = () => {
       videoId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
       description: "Premium Janssen skin treatments in action",
     },
-    {
-      id: 4,
-      title: "Groom Package Transformation",
-      thumbnail: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=450&fit=crop",
-      videoId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
-      description: "Complete groom package for special occasions",
-    },
-    {
-      id: 5,
-      title: "Salon Tour & Ambiance",
-      thumbnail: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=800&h=450&fit=crop",
-      videoId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
-      description: "Take a virtual tour of our modern salon space",
-    },
-    {
-      id: 6,
-      title: "Client Testimonials",
-      thumbnail: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop",
-      videoId: "dQw4w9WgXcQ", // Replace with your YouTube video ID
-      description: "Hear from our satisfied clients",
-    },
   ];
 
   const videosPerPage = 3;
